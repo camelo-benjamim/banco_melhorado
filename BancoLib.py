@@ -30,10 +30,8 @@ class ContaBonificada(Conta):
         self.bonus_acomulado = 0
     
     def deposite(self, valor):
-        ##convencionei que a conta bonificada não terá taxa de 1% quando depositar
-        ## pois caso tivesse o bonus seria igual ao desconto, o que na prática não teria nenhuma alteração
-        self.bonus_acomulado += valor * 0.01
-        self.saldo += valor
+        super().deposite(valor)
+        self.bonus_acomulado += valor * 0.001
     
     def renderBonus(self):
         ## o bônus será passado em valor para a conta do usuário
