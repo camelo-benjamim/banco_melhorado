@@ -8,7 +8,7 @@ class Conta():
 
     def deposite(self, valor):
         ##Desconto de 1% no valor depositado
-        self.saldo = self.saldo + valor - 0.01*valor
+        self.saldo = self.saldo + valor - 0.001*valor
 
     def sacar(self, valor):
         if self.saldo >= valor:
@@ -31,7 +31,7 @@ class ContaBonificada(Conta):
     
     def deposite(self, valor):
         super().deposite(valor)
-        self.bonus_acomulado += valor * 0.001
+        self.bonus_acomulado += valor * 0.0001
     
     def renderBonus(self):
         ## o bônus será passado em valor para a conta do usuário
