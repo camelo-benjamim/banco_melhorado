@@ -4,7 +4,7 @@ import random
 class Conta():
     def __init__(self, numConta):
         self.numero = numConta
-        self.saldo = 0
+        self.saldo = 0.0
 
     def deposite(self, valor):
         ##Desconto de 1% no valor depositado
@@ -12,7 +12,7 @@ class Conta():
 
     def sacar(self, valor):
         if self.saldo >= valor:
-            self.saldo = self.saldo - valor
+            self.saldo = self.saldo - float(valor)
             return True
         else:
             return False
@@ -27,7 +27,7 @@ class ContaBonificada(Conta):
     def __init__(self, numConta):
         ##instanciei a superclasse e criei um novo atributo que é o bonus acomulado
         super().__init__(numConta)
-        self.bonus_acomulado = 0
+        self.bonus_acomulado = 0.00
     
     def deposite(self, valor):
         super().deposite(valor)
@@ -37,7 +37,7 @@ class ContaBonificada(Conta):
         ## o bônus será passado em valor para a conta do usuário
         ## para isso adicionarei o bonus ao saldo da conta no formato salario += bonus
         self.saldo += self.bonus_acomulado
-        self.bonus_acomulado = 0
+        self.bonus_acomulado = 0.00
 
 class Banco():
     def __init__(self, nome):
