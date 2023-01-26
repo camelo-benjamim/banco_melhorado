@@ -1,5 +1,5 @@
 import random
-from connect import Connect_db
+from connectMySQL import Connector as Connect_db
 
 class Conta():
     def __init__(self, numConta,saldo):
@@ -120,7 +120,6 @@ class Banco():
             saldo = b.saldo
             self.connect.rendimentoBonificada(numConta,saldo)
             return saldo
-
 
     def sair(self):
         self.connect.close()

@@ -62,6 +62,8 @@ class Connect_db:
         except:
             return -1
 
+    def close(self):
+        self._con.close()
 
 
 

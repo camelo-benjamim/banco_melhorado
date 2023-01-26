@@ -1,4 +1,4 @@
-from BancoLib import Banco
+from BancoLibMySQL import Banco
 
 print("Bem-vindo")
 bancoUfrpe = Banco("UABJ")
@@ -63,6 +63,5 @@ while escolha > 0:
         else:
             print("A conta bonificada não existe")
     escolha = int(input("digite a opção desejada:"))
-
-## encerrando a conexão com o terminal e o banco de dados!
+##encerrando a conexão com o terminal do caixa bancário e cortando conexão com o banco de dados!
 bancoUfrpe.sair()
